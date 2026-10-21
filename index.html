@@ -1,0 +1,410 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Lovely Gonzales | Video Editor, Graphic Designer &amp; Content Creator</title>
+<meta name="description" content="Lovely Gonzales is a video editor, graphic designer and content creator. AI visuals, UGC-style video ads, Reels, social graphics and brand designs.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;1,9..144,400&family=Figtree:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#f8eeed;--paper:#fffaf9;--ink:#3b1219;--muted:#7d5a60;--maroon:#7b2d3b;--soft:#c98a93;--tint:#efd7d9;--line:#e3c4c8;--on:#fffaf9;--glow:rgba(201,138,147,.35);
+  --serif:"Fraunces",Georgia,serif;--sans:"Figtree",system-ui,sans-serif;color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){--bg:#24090e;--paper:#2f1016;--ink:#f6e6e7;--muted:#c4a0a5;--maroon:#e3939f;--soft:#a85563;--tint:#4a1a23;--line:#5a2530;--on:#24090e;--glow:rgba(227,147,159,.18);color-scheme:dark}
+}
+:root[data-theme="dark"]{--bg:#24090e;--paper:#2f1016;--ink:#f6e6e7;--muted:#c4a0a5;--maroon:#e3939f;--soft:#a85563;--tint:#4a1a23;--line:#5a2530;--on:#24090e;--glow:rgba(227,147,159,.18);color-scheme:dark}
+*,*::before,*::after{box-sizing:border-box}
+html{scroll-behavior:smooth;overflow-x:clip}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 1.05rem/1.65 var(--sans);overflow-x:hidden;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+h1,h2,h3{font-family:var(--serif);font-weight:400;line-height:1.1;margin:0;letter-spacing:-.01em}
+a{color:inherit}
+:focus-visible{outline:3px solid var(--maroon);outline-offset:3px}
+section{position:relative;display:flex;flex-direction:column;justify-content:center;padding:6.5rem max(1.5rem,7vw) 6.5rem max(3rem,9vw)}
+#hero{min-height:100vh;overflow:hidden}
+.wrap{max-width:60rem;width:100%}
+h2{font-size:clamp(2.2rem,5.4vw,3.8rem);margin-bottom:2.2rem;color:var(--ink)}
+h2::after{content:"";display:block;width:3.2rem;height:3px;background:var(--maroon);border-radius:3px;margin-top:1rem}
+ 
+/* film-strip playhead: the memorable element */
+.rail{position:fixed;left:.9rem;top:0;bottom:0;width:14px;z-index:5;background:repeating-linear-gradient(to bottom,var(--line) 0 9px,transparent 9px 18px);border-radius:3px;opacity:.9}
+.head{position:absolute;left:-7px;top:0;width:28px;height:28px;border-radius:50%;background:var(--maroon);box-shadow:0 0 0 6px var(--glow);display:grid;place-items:center}
+.head::after{content:"";border-left:8px solid var(--on);border-top:5px solid transparent;border-bottom:5px solid transparent;margin-left:2px}
+.tc{position:fixed;right:1rem;bottom:calc(1rem + env(safe-area-inset-bottom,0px));font:500 .85rem var(--sans);font-variant-numeric:tabular-nums;background:var(--maroon);color:var(--on);padding:.4rem .9rem;border-radius:99px;z-index:6;box-shadow:0 8px 24px var(--glow)}
+ 
+/* hero */
+#hero::before{content:"";position:absolute;right:-12rem;top:-8rem;width:42rem;height:42rem;border-radius:50%;background:radial-gradient(circle,var(--glow),transparent 66%);pointer-events:none}
+#hero .wrap{max-width:74rem;display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;align-items:center;position:relative}
+#hero h1{font-size:clamp(2.4rem,5vw,4.6rem);color:var(--maroon)}
+#hero h1 em{display:block;font-style:italic;color:var(--ink)}
+#hero p{max-width:30rem;color:var(--muted);margin:1.4rem 0 2rem;font-size:1.15rem}#hero p.eyebrow{margin:0 0 1.4rem;font-size:.8rem}#hero p.lead{margin:1.6rem 0 0;font-size:1.4rem;color:var(--ink)}
+.btn{display:inline-block;text-decoration:none;background:var(--maroon);color:var(--on);padding:.95rem 1.8rem;border-radius:99px;font-weight:600;transition:transform .2s,box-shadow .25s}
+.btn:hover{transform:translateY(-3px);box-shadow:0 12px 30px var(--glow)}
+.btn.ghost{background:transparent;border:2px solid var(--maroon);color:var(--maroon)}
+.scroll{display:block;margin-top:3rem;color:var(--muted);font-size:.95rem;text-decoration:none}
+.scroll i{display:inline-block;width:1px;height:2.5rem;background:var(--maroon);vertical-align:middle;margin-right:.8rem;animation:drip 2s ease-in-out infinite;transform-origin:top}
+@keyframes drip{0%,100%{transform:scaleY(.3)}50%{transform:scaleY(1)}}
+.intro{margin:0;position:relative}
+.rf{position:relative}
+.rf::before,.rf::after{content:"";position:absolute;inset:0;border-radius:1.4rem}
+.rf::before{background:var(--soft);opacity:.55;transform:rotate(-6deg) translate(-.7rem,.9rem)}
+.rf::after{background:var(--maroon);transform:rotate(4deg) translate(.9rem,.5rem)}
+.rf video{position:relative;z-index:2;display:block;width:100%;aspect-ratio:16/9;object-fit:cover;background:#000;border:6px solid var(--paper);border-radius:1.2rem;box-shadow:0 28px 60px rgba(59,18,25,.35);transform:rotate(-1.5deg);transition:transform .4s}
+.rf:hover video{transform:rotate(0)}
+.intro figcaption{position:relative;z-index:3;display:inline-flex;align-items:center;gap:.6rem;margin-top:2.2rem;background:var(--paper);border:1px solid var(--line);border-radius:99px;padding:.4rem 1rem;font-weight:600;font-size:.92rem}
+.intro figcaption i{width:.6rem;height:.6rem;border-radius:50%;background:var(--maroon);animation:ping 1.8s ease-out infinite}
+@keyframes ping{to{box-shadow:0 0 0 .7rem transparent}}
+.intro figcaption i{box-shadow:0 0 0 0 var(--maroon)}
+ 
+.eyebrow{font:600 .8rem var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--maroon);margin:0 0 1.4rem}
+.lead{font-family:var(--serif);font-style:italic;font-size:1.3rem;color:var(--ink)}
+/* about */
+#about{background:var(--paper);border-block:1px solid var(--line)}
+.aboutgrid{display:grid;grid-template-columns:15rem 1fr;gap:3rem;align-items:start}
+.me{margin:0;text-align:center}
+.me img{display:block;width:100%;height:auto;aspect-ratio:1;object-fit:cover;object-position:50% 50%;border-radius:50%;border:6px solid var(--paper);box-shadow:0 0 0 3px var(--maroon),0 20px 44px var(--glow)}
+.me figcaption{margin-top:1.1rem;font:600 .8rem var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--maroon)}
+.me figcaption b{display:block;margin-top:.3rem;font:italic 400 1.5rem var(--serif);letter-spacing:0;text-transform:none;color:var(--ink)}
+#about p{font-family:var(--serif);font-size:clamp(1.4rem,2.8vw,2rem);line-height:1.5;max-width:46rem;margin:0 0 1.2rem}
+#about p:first-of-type::first-letter{color:var(--maroon);font-size:1.25em;font-style:italic}
+#about p+p{font:400 1.1rem/1.7 var(--sans);color:var(--muted)}
+ 
+/* offer */
+.offer{display:grid;gap:1.2rem;grid-template-columns:repeat(auto-fit,minmax(15rem,1fr))}
+.offer article{background:var(--paper);border:1px solid var(--line);border-radius:1.4rem;padding:2rem 1.7rem;transition:transform .3s,background .3s,box-shadow .3s}
+.offer article:hover{transform:translateY(-6px);box-shadow:0 20px 44px var(--glow);border-color:var(--soft)}
+.offer svg{width:2.6rem;height:2.6rem;margin-bottom:1rem;padding:.6rem;border-radius:50%;background:var(--maroon);fill:none;stroke:var(--on);stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.offer h3{font-size:1.6rem;color:var(--maroon);margin-bottom:.6rem}
+.offer .num{display:block;font:600 .8rem var(--sans);letter-spacing:.16em;color:var(--soft);margin-bottom:.4rem}
+.offer h4{margin:1.2rem 0 .5rem;font:600 .8rem var(--sans);letter-spacing:.12em;text-transform:uppercase;color:var(--ink)}
+.offer ul{margin:0;padding-left:1.1rem;color:var(--muted);font-size:.98rem}.offer li{margin:.2rem 0}
+.offer p{margin:0;color:var(--muted);font-size:1rem}
+ 
+/* works */
+.tabs{display:flex;gap:.6rem;margin:-.6rem 0 2.4rem;flex-wrap:wrap}
+.tabs button{font:600 1rem var(--sans);padding:.7rem 1.5rem;border-radius:99px;border:2px solid var(--maroon);background:transparent;color:var(--maroon);cursor:pointer;transition:.2s}
+.tabs button[aria-selected="true"],.tabs button:hover{background:var(--maroon);color:var(--on)}
+.panel[hidden]{display:none}
+.group+.group{margin-top:3.2rem}
+.group h3{font-size:1.5rem;color:var(--maroon);margin-bottom:.3rem}
+.group>p{margin:0 0 1.4rem;color:var(--muted);font-size:.98rem}
+.grid{display:grid;gap:1.6rem;grid-template-columns:repeat(auto-fill,minmax(13rem,1fr))}
+.grid.wide{grid-template-columns:repeat(auto-fill,minmax(20rem,1fr))}
+.vcard{margin:0;min-width:0}
+.vcard video{display:block;width:100%;height:auto;aspect-ratio:9/16;object-fit:contain;border-radius:1.1rem;background:#000;border:5px solid var(--paper);box-shadow:0 18px 40px rgba(59,18,25,.2);transition:transform .3s}
+.grid.wide .vcard video{aspect-ratio:16/9}
+.vcard:hover video{transform:translateY(-4px)}
+.vcard figcaption{margin-top:.7rem;font-weight:600;font-size:.98rem}
+.vcard figcaption small{display:block;font-weight:400;color:var(--muted);font-size:.85rem}
+.dgrid{display:grid;gap:1.6rem;grid-template-columns:repeat(auto-fill,minmax(15rem,1fr))}
+.dcard{margin:0}
+.dcard button{display:block;width:100%;padding:0;border:5px solid var(--paper);border-radius:1.1rem;overflow:hidden;background:var(--paper);cursor:zoom-in;box-shadow:0 18px 40px rgba(59,18,25,.2);transition:transform .3s}
+.dcard button:hover{transform:translateY(-4px)}
+.dcard img{display:block;width:100%;height:auto;aspect-ratio:3/4;object-fit:cover}
+.dcard figcaption{margin-top:.7rem;font-weight:600;font-size:.98rem}
+.dcard figcaption small{display:block;font-weight:400;color:var(--muted);font-size:.85rem}
+dialog{border:0;padding:0;background:transparent;max-width:min(92vw,46rem);max-height:92vh;overflow:visible}
+dialog::backdrop{background:rgba(20,5,8,.82)}
+dialog img{display:block;max-width:100%;max-height:88vh;margin:auto;border-radius:.8rem}
+dialog button{position:absolute;top:-2.6rem;right:0;font:600 .95rem var(--sans);background:var(--paper);color:var(--ink);border:0;border-radius:99px;padding:.4rem 1rem;cursor:pointer}
+ 
+/* tools */
+.tools{display:grid;gap:2.2rem;grid-template-columns:repeat(auto-fit,minmax(13rem,1fr))}
+.tools h3{font-size:1.5rem;color:var(--maroon);padding-bottom:.6rem;border-bottom:2px solid var(--line);margin-bottom:1rem}
+.tools ul{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:.5rem}
+.tools li{padding:.35rem 1rem;font-size:1rem;background:var(--paper);border:1px solid var(--line);border-radius:99px;transition:.2s}
+.tools li:hover{background:var(--maroon);color:var(--on);border-color:var(--maroon)}
+ 
+/* hours */
+#hours{background:var(--paper);border-block:1px solid var(--line)}
+#hours .big{font-family:var(--serif);font-size:clamp(2.8rem,10vw,7.5rem);color:var(--maroon);line-height:1;font-style:italic}
+#hours p{color:var(--muted);margin:1.2rem 0 0}
+ 
+/* contact */
+#contact{background:var(--maroon);color:var(--on);overflow:hidden}
+#contact::before{content:"";position:absolute;right:-8rem;bottom:-10rem;width:30rem;height:30rem;border-radius:50%;border:2px solid var(--on);opacity:.15;box-shadow:0 0 0 3rem rgba(255,255,255,.03),0 0 0 6rem rgba(255,255,255,.03)}
+#contact h2{font-size:clamp(2.4rem,7vw,5.2rem);color:inherit}
+#contact h2::after{background:var(--on)}
+#contact .who{font-size:1.1rem;margin:0 0 2rem}
+#contact .who a{font-size:clamp(1.2rem,3vw,1.8rem);font-weight:600;text-decoration-thickness:2px;text-underline-offset:6px;word-break:break-all}
+#contact .btn{background:var(--on);color:var(--maroon)}
+#contact .btn.ghost{background:transparent;border-color:currentColor;color:inherit;margin-left:.5rem}
+:root[data-theme="dark"] #contact,:root:not([data-theme="light"]) #contact{background:var(--tint);color:var(--ink)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) #contact .btn{background:var(--maroon);color:var(--on)}:root:not([data-theme="light"]) #contact h2::after{background:var(--maroon)}}
+ 
+
+/* ===== interactive layer ===== */
+.theme{position:fixed;top:1rem;right:1rem;z-index:7;width:2.7rem;height:2.7rem;border-radius:50%;border:1px solid var(--line);background:var(--paper);color:var(--maroon);cursor:pointer;display:grid;place-items:center;box-shadow:0 8px 24px var(--glow);transition:transform .25s}
+.theme:hover{transform:rotate(25deg) scale(1.08)}
+.theme svg{width:1.3rem;height:1.3rem;fill:none;stroke:currentColor;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.blob{position:absolute;border-radius:50%;filter:blur(40px);opacity:.55;pointer-events:none;animation:float 14s ease-in-out infinite}
+.blob.a{width:18rem;height:18rem;left:-5rem;bottom:2rem;background:var(--tint)}
+.blob.b{width:12rem;height:12rem;right:20%;top:10%;background:var(--glow);animation-delay:-6s}
+@keyframes float{0%,100%{transform:translate(0,0) scale(1)}50%{transform:translate(2rem,-2rem) scale(1.12)}}
+.w{display:inline-block;opacity:0;transform:translateY(.6em) rotate(3deg);animation:wordin .8s cubic-bezier(.2,.8,.2,1) forwards}
+@keyframes wordin{to{opacity:1;transform:none}}
+.mq{overflow:hidden;padding:1.4rem 0;margin-top:-1.4rem;position:relative;z-index:3}
+.marquee{overflow:hidden;background:var(--maroon);color:var(--on);padding:1.1rem 0;transform:rotate(-1.2deg);margin:-1.2rem -2rem 0;position:relative;z-index:3;box-shadow:0 14px 40px var(--glow)}
+.marquee div{display:flex;width:max-content;animation:slide 28s linear infinite}
+.marquee:hover div{animation-play-state:paused}
+.marquee span{font:italic 400 clamp(1.3rem,3vw,2rem) var(--serif);padding:0 1.6rem;white-space:nowrap}
+.marquee span::after{content:"\2726";margin-left:3.2rem;font-style:normal;opacity:.6}
+@keyframes slide{to{transform:translateX(-50%)}}
+.stats{display:flex;flex-wrap:wrap;gap:1rem;margin-top:2.2rem}
+.stats div{flex:1 1 7rem;background:var(--bg);border:1px solid var(--line);border-radius:1.2rem;padding:1rem 1.2rem;text-align:center}
+.stats b{display:block;font:italic 400 2.6rem/1 var(--serif);color:var(--maroon)}
+.stats span{font-size:.85rem;color:var(--muted)}
+.offer article{position:relative;overflow:hidden;transform-style:preserve-3d;will-change:transform}
+.offer article::before{content:"";position:absolute;inset:0;background:radial-gradient(18rem circle at var(--mx,50%) var(--my,0%),var(--glow),transparent 60%);opacity:0;transition:opacity .3s;pointer-events:none}
+.offer article:hover::before{opacity:1}
+.offer article>*{position:relative}
+.offer article .num{transition:letter-spacing .3s}
+.offer article:hover .num{letter-spacing:.4em}
+.vwrap{position:relative}
+.vwrap .dur{position:absolute;left:.9rem;top:.9rem;z-index:2;background:rgba(20,5,8,.7);color:#fff;font:600 .75rem var(--sans);padding:.2rem .6rem;border-radius:99px;pointer-events:none;backdrop-filter:blur(4px)}
+.vwrap .bigplay{position:absolute;left:50%;top:50%;z-index:2;width:4rem;height:4rem;margin:-2rem 0 0 -2rem;border-radius:50%;border:0;background:var(--maroon);cursor:pointer;box-shadow:0 0 0 0 var(--glow);animation:pulse 2.2s infinite;transition:transform .25s,opacity .25s;display:grid;place-items:center}
+.vwrap .bigplay::after{content:"";border-left:16px solid var(--on);border-top:10px solid transparent;border-bottom:10px solid transparent;margin-left:4px}
+.vwrap:hover .bigplay{transform:scale(1.12)}
+.vwrap.go .bigplay,.vwrap.go .dur{opacity:0;pointer-events:none}
+@keyframes pulse{70%{box-shadow:0 0 0 1.1rem transparent}100%{box-shadow:0 0 0 0 transparent}}
+.grid .vcard,.dgrid .dcard{animation:cardin .6s both}
+@keyframes cardin{from{opacity:0;transform:translateY(24px) scale(.97)}}
+.dcard button{position:relative}
+.dcard button::after{content:"View";position:absolute;inset:auto 0 0 0;padding:.7rem;background:linear-gradient(transparent,rgba(59,18,25,.85));color:#fff;font:600 .9rem var(--sans);text-align:center;transform:translateY(100%);transition:transform .3s}
+.dcard button:hover::after{transform:none}
+.dcard img{transition:transform .6s}.dcard button:hover img{transform:scale(1.06)}
+dialog .nav{position:fixed;top:50%;width:3rem;height:3rem;margin-top:-1.5rem;border-radius:50%;padding:0;font-size:1.4rem}
+dialog .nav.prev{left:1rem}dialog .nav.next{right:1rem}
+.copy{margin-left:.5rem}
+.copy.ok::after{content:" \2713"}
+.btn{will-change:transform}
+.top{position:fixed;left:50%;bottom:1rem;z-index:6;transform:translate(-50%,5rem);border:0;border-radius:99px;background:var(--paper);color:var(--maroon);font:600 .9rem var(--sans);padding:.6rem 1.2rem;box-shadow:0 8px 24px var(--glow);cursor:pointer;transition:transform .35s}
+.top.show{transform:translate(-50%,0)}
+@media (prefers-reduced-motion:reduce){.w{opacity:1;transform:none}.marquee div{animation:none}.blob,.bigplay{animation:none!important}}
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s,transform .7s}
+.rv.in{opacity:1;transform:none}
+@media (max-width:860px){.aboutgrid{grid-template-columns:1fr;gap:2rem}.me{max-width:12rem}#hero .wrap{grid-template-columns:1fr}.intro{max-width:34rem}}
+@media (max-width:600px){.grid{grid-template-columns:repeat(2,1fr);gap:1rem}.grid.wide{grid-template-columns:1fr}.dgrid{grid-template-columns:repeat(2,1fr);gap:1rem}section{padding-left:2.6rem}.tc{font-size:.75rem}#contact .btn.ghost{margin:.6rem 0 0}}
+@media (prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}html{scroll-behavior:auto}.rv{opacity:1;transform:none}}
+</style>
+</head>
+<body>
+<button class="theme" id="theme" type="button" aria-label="Switch light or dark mode"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M21 12.8A9 9 0 1111.2 3a7 7 0 009.8 9.8z"/></svg></button>
+<button class="top" id="top" type="button">&uarr; Back to top</button>
+<div class="rail" aria-hidden="true"><div class="head" id="head"></div></div>
+<div class="tc" id="tc" aria-hidden="true">00:00:00</div>
+ 
+<main>
+<section id="hero">
+  <span class="blob a" aria-hidden="true"></span><span class="blob b" aria-hidden="true"></span>
+  <div class="wrap">
+    <div>
+      <p class="eyebrow">Video Editor · Graphic Designer · Content Creation</p>
+      <h1>&ldquo;I turn ideas into<em>stop-scrolling content.&rdquo;</em></h1>
+      <p class="lead">Strategy + creativity = real impact.</p>
+      <p>I create engaging social media content, design eye-catching visuals, and help brands grow through strategy, creativity, and meaningful connections.</p>
+      <a class="btn" href="#works">See my work</a>
+      <a class="scroll" href="#about"><i></i>Scroll to keep watching</a>
+    </div>
+    <figure class="intro">
+      <div class="rf"><video controls preload="none" playsinline poster="posters/project-3.jpg" src="project-3.mp4" aria-label="Introduction video from Lovely Gonzales"></video></div>
+      <figcaption><i></i>Meet Lovely. Press play</figcaption>
+    </figure>
+  </div>
+</section>
+ 
+<div class="mq"><div class="marquee" aria-hidden="true"><div><span>AI Content Creation</span><span>Video Editing</span><span>Graphic Design</span><span>UGC &amp; Product Ads</span><span>Reels &amp; Shorts</span><span>Brand Visuals</span><span>Motion Graphics</span><span>AI Content Creation</span><span>Video Editing</span><span>Graphic Design</span><span>UGC &amp; Product Ads</span><span>Reels &amp; Shorts</span><span>Brand Visuals</span><span>Motion Graphics</span><span>AI Content Creation</span><span>Video Editing</span><span>Graphic Design</span><span>UGC &amp; Product Ads</span><span>Reels &amp; Shorts</span><span>Brand Visuals</span><span>Motion Graphics</span><span>AI Content Creation</span><span>Video Editing</span><span>Graphic Design</span><span>UGC &amp; Product Ads</span><span>Reels &amp; Shorts</span><span>Brand Visuals</span><span>Motion Graphics</span></div></div></div>
+ 
+<section id="about">
+  <div class="wrap rv">
+    <div class="aboutgrid">
+      <figure class="me"><img src="profile.jpg" alt="Portrait of Lovely Gonzales" width="480" height="480"><figcaption>Little about me<b>Hello! I&rsquo;m Lovely</b></figcaption></figure>
+      <div>
+        <h2>About me</h2>
+        <p>I&rsquo;m a creative digital marketer who turns ideas into eye-catching content and meaningful brand experiences.</p>
+        <p>I bring concepts to life through AI-powered visuals, engaging video edits, and scroll-stopping graphic designs. From product ads and UGC-style videos to social media creatives, I combine technology and creativity to make every piece of content purposeful, polished, and on-brand.</p>
+        <p>Beyond creating visuals, I aim to help brands capture attention, connect with audiences, and turn ideas into impact.</p>
+      </div>
+    </div>
+    <div class="stats" id="stats"><div><b data-n="video">0</b><span>video samples</span></div><div><b data-n="design">0</b><span>design pieces</span></div><div><b data-n="3">0</b><span>core services</span></div><div><b data-n="tools">0</b><span>tools I use</span></div></div>
+  </div>
+</section>
+ 
+<section id="offer">
+  <div class="wrap rv">
+    <h2>What I offer</h2>
+    <div class="offer">
+      <article><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg><span class="num">01</span><h3>AI Content Creation</h3><p>Create eye-catching AI-generated visuals and videos that bring creative concepts to life for brands, products, and digital campaigns.</p><h4>Services</h4><ul><li>AI-generated product visuals</li><li>AI video ads &amp; UGC concepts</li></ul></article>
+      <article><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9z"/></svg><span class="num">02</span><h3>Video Editing</h3><p>Transform raw footage into engaging, polished videos designed to capture attention, tell stories, and connect with your target audience.</p><h4>Services</h4><ul><li>TikTok, Reels &amp; YouTube Shorts</li><li>UGC &amp; product video ads</li><li>Long-form videos &amp; motion graphics</li></ul></article>
+      <article><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg><span class="num">03</span><h3>Graphic Design</h3><p>Design compelling, visually consistent graphics that communicate your message, strengthen brand identity, and make your content stand out.</p><h4>Services</h4><ul><li>Social media graphics &amp; ad creatives</li><li>Promotional &amp; marketing materials</li><li>Church, school &amp; event designs</li></ul></article>
+    </div>
+  </div>
+</section>
+ 
+<section id="works">
+  <div class="wrap rv">
+    <h2>My works</h2>
+    <div class="tabs" role="tablist">
+      <button role="tab" id="t-ai" aria-selected="true" aria-controls="p-ai">AI samples</button>
+      <button role="tab" id="t-video" aria-selected="false" aria-controls="p-video">Video editing</button>
+      <button role="tab" id="t-design" aria-selected="false" aria-controls="p-design">Graphic design</button>
+    </div>
+    <div class="panel" id="p-ai" role="tabpanel" aria-labelledby="t-ai">
+      <div class="group">
+        <h3>AI samples</h3>
+        <p>AI-generated visuals and UGC-style video ads, backed by editing and design.</p>
+        <div class="grid">
+          <figure class="vcard"><div class="vwrap"><span class="dur">0:31</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-1.jpg" src="project-1.mp4" aria-label="Beauty product ad"></video></div><figcaption>Beauty product ad<small>AI UGC-style ad</small></figcaption></figure>
+          <figure class="vcard"><div class="vwrap"><span class="dur">0:30</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-2.jpg" src="project-2.mp4" aria-label="Skincare reel"></video></div><figcaption>Skincare reel<small>AI UGC-style ad</small></figcaption></figure>
+          <figure class="vcard"><div class="vwrap"><span class="dur">0:28</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/1022.jpg" src="1022.mp4" aria-label="Lipstick promo"></video></div><figcaption>Lipstick promo<small>AI UGC-style ad</small></figcaption></figure>
+          <figure class="vcard"><div class="vwrap"><span class="dur">1:02</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/nynp.jpg" src="nynp.mp4" aria-label="NYNP"></video></div><figcaption>NYNP<small>AI presenter video ad</small></figcaption></figure>
+        </div>
+      </div>
+    </div>
+    <div class="panel" id="p-video" role="tabpanel" aria-labelledby="t-video" hidden>
+      <div class="group">
+        <h3>Short-form reels</h3>
+        <p>Vertical edits for TikTok, Reels and YouTube Shorts.</p>
+        <div class="grid">
+          <figure class="vcard"><div class="vwrap"><span class="dur">0:51</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="no-shortcuts.jpg" src="no-shortcuts.mp4" aria-label="No Shortcuts in This Game"></video></div><figcaption>No Shortcuts in This Game<small>Short-form edit with captions and motion graphics</small></figcaption></figure>
+        </div>
+      </div>
+      <div class="group">
+        <h3>Promos and motion graphics</h3>
+        <p>Landscape promo and motion work.</p>
+        <div class="grid wide">
+          <figure class="vcard"><div class="vwrap"><span class="dur">0:08</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="new-flavor.jpg" src="new-flavor.mp4" aria-label="New Flavor"></video></div><figcaption>New Flavor<small>Product promo animation</small></figcaption></figure>
+        </div>
+      </div>
+    </div>
+    <div class="panel" id="p-design" role="tabpanel" aria-labelledby="t-design" hidden>
+      <div class="group">
+        <h3>Branding and merch mockups</h3>
+        <p>Church and event designs: Covenant Keeping tote bag and polo shirt. Tap an image to enlarge.</p>
+        <div class="dgrid">
+          <figure class="dcard"><button type="button" data-full="covenant-tote.jpg" data-alt="Covenant Keeping tote bag mockup showing the logo on the front and a Deuteronomy 7:9 verse on the back"><img src="covenant-tote.jpg" alt="Covenant Keeping tote bag mockup showing the logo on the front and a Deuteronomy 7:9 verse on the back" loading="lazy"></button><figcaption>Tote bag<small>Covenant Keeping, front and back</small></figcaption></figure>
+          <figure class="dcard"><button type="button" data-full="covenant-polo.jpg" data-alt="Covenant Keeping polo shirt mockup in navy, gold and white"><img src="covenant-polo.jpg" alt="Covenant Keeping polo shirt mockup in navy, gold and white" loading="lazy"></button><figcaption>Polo shirt<small>Covenant Keeping, front and back</small></figcaption></figure>
+        </div>
+      </div>
+      <div class="group">
+        <h3>Poster design</h3>
+        <p>Product advertising layout.</p>
+        <div class="dgrid">
+          <figure class="dcard"><button type="button" data-full="kicks-poster.jpg" data-alt="Kicks Soft poster featuring a green loafer on a green and cream background"><img src="kicks-poster.jpg" alt="Kicks Soft poster featuring a green loafer on a green and cream background" loading="lazy"></button><figcaption>Kicks Soft<small>Footwear poster</small></figcaption></figure>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+<dialog id="lb" aria-label="Enlarged design"><button type="button" id="lbx">Close</button><button type="button" class="nav prev" id="lbp" aria-label="Previous">&lsaquo;</button><button type="button" class="nav next" id="lbn" aria-label="Next">&rsaquo;</button><img alt=""></dialog>
+ 
+<section id="tools">
+  <div class="wrap rv">
+    <h2>Tools</h2>
+    <div class="tools">
+      <div><h3>AI Content Creation</h3><ul><li>HeyGen</li><li>Google Flow</li></ul></div>
+      <div><h3>Video Editing</h3><ul><li>CapCut</li><li>DaVinci Resolve</li></ul></div>
+      <div><h3>Graphic Designing</h3><ul><li>Canva</li><li>Affinity</li><li>Illustrator</li></ul></div>
+      
+    </div>
+  </div>
+</section>
+ 
+<section id="hours">
+  <div class="wrap rv">
+    <h2>Working hours</h2>
+    <div class="big">9AM – 5PM</div>
+    <p>EDT/EST, so I am online during your business day.</p>
+  </div>
+</section>
+ 
+<section id="contact">
+  <div class="wrap rv">
+    <h2>Ready for growth? Contact me.</h2>
+    <p class="who">Lovely Gonzales<br><a href="mailto:lovelygonzalesb@gmail.com">lovelygonzalesb@gmail.com</a></p>
+    <a class="btn" href="mailto:lovelygonzalesb@gmail.com">Email me</a>
+    <button class="btn ghost copy" id="copy" type="button">Copy email</button>
+    <!-- Resume: replace the # below with your resume URL (Google Drive, PDF link, etc.). The button stays hidden until you do. -->
+    <a class="btn ghost" href="#" id="resume" target="_blank" rel="noopener" hidden>View my resume</a>
+  </div>
+</section>
+</main>
+ 
+<script>
+// Playhead + timecode follow scroll
+const head=document.getElementById('head'),tc=document.getElementById('tc');
+function tick(){
+  const max=document.documentElement.scrollHeight-innerHeight,p=max>0?scrollY/max:0;
+  head.style.top=(p*(innerHeight-28))+'px';
+  const s=Math.round(p*90),pad=n=>String(n).padStart(2,'0');
+  tc.textContent='00:'+pad(Math.floor(s/60))+':'+pad(s%60);
+}
+addEventListener('scroll',tick,{passive:true});addEventListener('resize',tick);tick();
+// Only one video plays at a time
+document.querySelectorAll('video').forEach(v=>v.addEventListener('play',()=>document.querySelectorAll('video').forEach(o=>{if(o!==v)o.pause()})));
+// Works tabs
+const tabs=[...document.querySelectorAll('.tabs [role=tab]')];
+tabs.forEach(t=>t.addEventListener('click',()=>{
+  tabs.forEach(o=>{const on=o===t;o.setAttribute('aria-selected',on);document.getElementById(o.getAttribute('aria-controls')).hidden=!on});
+  document.querySelectorAll('video').forEach(v=>v.pause());
+}));
+// Lightbox
+const lb=document.getElementById('lb'),lbi=lb.querySelector('img');
+document.querySelectorAll('.dcard button').forEach(b=>b.addEventListener('click',()=>{lbi.src=b.dataset.full;lbi.alt=b.dataset.alt;lb.showModal()}));
+document.getElementById('lbx').onclick=()=>lb.close();
+lb.addEventListener('click',e=>{if(e.target===lb)lb.close()});
+// Show the resume button only once a real link is set
+const rs=document.getElementById('resume');
+if(rs.getAttribute('href')!=='#')rs.hidden=false;
+// Reveal on scroll
+const rv=document.querySelectorAll('.rv');
+if('IntersectionObserver' in window){
+  const io=new IntersectionObserver(es=>es.forEach(en=>{if(en.isIntersecting){en.target.classList.add('in');io.unobserve(en.target)}}),{threshold:.12});
+  rv.forEach(el=>io.observe(el));
+}else rv.forEach(el=>el.classList.add('in'));
+
+// ===== interactive layer =====
+const rm=matchMedia('(prefers-reduced-motion:reduce)').matches;
+// word-by-word headline
+if(!rm){let i=0;const split=n=>{[...n.childNodes].forEach(c=>{if(c.nodeType===3){const f=document.createDocumentFragment();c.textContent.split(/(\s+)/).forEach(t=>{if(!t.trim()){f.append(t);return}const w=document.createElement('span');w.className='w';w.textContent=t;w.style.animationDelay=(.15+i++*.09)+'s';f.append(w)});c.replaceWith(f)}else split(c)})};split(document.querySelector('#hero h1'))}
+// theme toggle (remembers choice when allowed)
+const root=document.documentElement;
+try{const t=localStorage.getItem('theme');if(t)root.dataset.theme=t}catch(e){}
+document.getElementById('theme').onclick=()=>{const dark=root.dataset.theme?root.dataset.theme==='dark':matchMedia('(prefers-color-scheme:dark)').matches;root.dataset.theme=dark?'light':'dark';try{localStorage.setItem('theme',root.dataset.theme)}catch(e){}};
+// service cards: spotlight + tilt
+document.querySelectorAll('.offer article').forEach(c=>{
+  c.addEventListener('pointermove',e=>{const r=c.getBoundingClientRect(),x=e.clientX-r.left,y=e.clientY-r.top;c.style.setProperty('--mx',x+'px');c.style.setProperty('--my',y+'px');if(!rm&&e.pointerType==='mouse')c.style.transform=`translateY(-6px) perspective(700px) rotateX(${(.5-y/r.height)*6}deg) rotateY(${(x/r.width-.5)*8}deg)`});
+  c.addEventListener('pointerleave',()=>c.style.transform='');
+});
+// magnetic buttons
+if(!rm)document.querySelectorAll('.btn').forEach(b=>{b.addEventListener('pointermove',e=>{if(e.pointerType!=='mouse')return;const r=b.getBoundingClientRect();b.style.transform=`translate(${(e.clientX-r.left-r.width/2)*.18}px,${(e.clientY-r.top-r.height/2)*.28}px)`});b.addEventListener('pointerleave',()=>b.style.transform='')});
+// video big play buttons
+document.querySelectorAll('.vwrap').forEach(w=>{const v=w.querySelector('video'),b=w.querySelector('.bigplay');
+  b.onclick=()=>{v.play()};
+  v.addEventListener('play',()=>w.classList.add('go'));
+  v.addEventListener('ended',()=>{w.classList.remove('go');v.load()});
+});
+document.querySelectorAll('video').forEach(v=>v.addEventListener('play',()=>document.querySelectorAll('.vwrap').forEach(w=>{if(w.querySelector('video')!==v)w.classList.remove('go')})));
+// count-up stats (real counts from the page)
+const counts={video:document.querySelectorAll('#works .vcard').length,design:document.querySelectorAll('#works .dcard').length,3:document.querySelectorAll('.offer article').length,tools:document.querySelectorAll('.tools li').length};
+const sio=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;sio.disconnect();en.target.querySelectorAll('b').forEach(b=>{const to=counts[b.dataset.n],t0=performance.now();const f=t=>{const p=Math.min(1,(t-t0)/(rm?1:1100));b.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)})}),{threshold:.4});
+sio.observe(document.getElementById('stats'));
+// lightbox gallery with prev/next + keys
+const dbtns=[...document.querySelectorAll('.dcard button')];let cur=0;
+const show=i=>{cur=(i+dbtns.length)%dbtns.length;lbi.src=dbtns[cur].dataset.full;lbi.alt=dbtns[cur].dataset.alt};
+dbtns.forEach((b,i)=>b.addEventListener('click',()=>show(i)));
+document.getElementById('lbp').onclick=()=>show(cur-1);document.getElementById('lbn').onclick=()=>show(cur+1);
+lb.addEventListener('keydown',e=>{if(e.key==='ArrowLeft')show(cur-1);if(e.key==='ArrowRight')show(cur+1)});
+// copy email
+const cp=document.getElementById('copy');cp.onclick=async()=>{try{await navigator.clipboard.writeText('lovelygonzalesb@gmail.com');cp.textContent='Copied';cp.classList.add('ok');setTimeout(()=>{cp.textContent='Copy email';cp.classList.remove('ok')},1800)}catch(e){cp.textContent='lovelygonzalesb@gmail.com'}};
+// back to top
+const top_=document.getElementById('top');top_.onclick=()=>scrollTo({top:0});addEventListener('scroll',()=>top_.classList.toggle('show',scrollY>innerHeight),{passive:true});
+</script>
+</body>
+</html>
+ 
+Claude finished the response
