@@ -87,7 +87,10 @@ h2::after{content:"";display:block;width:3.2rem;height:3px;background:var(--maro
 .tabs{display:flex;gap:.6rem;margin:-.6rem 0 2.4rem;flex-wrap:wrap}
 .tabs button{font:600 1rem var(--sans);padding:.7rem 1.5rem;border-radius:99px;border:2px solid var(--maroon);background:transparent;color:var(--maroon);cursor:pointer;transition:.2s}
 .tabs button[aria-selected="true"],.tabs button:hover{background:var(--maroon);color:var(--on)}
+.more-btn{display:block;margin:1.6rem auto 0;padding:.7rem 1.5rem;border:2px solid var(--maroon);border-radius:99px;background:transparent;color:var(--maroon);font:600 1rem var(--sans);cursor:pointer;transition:background .2s,color .2s}
+.more-btn:hover{background:var(--maroon);color:var(--on)}
 .panel[hidden]{display:none}
+.vcard[hidden]{display:none}
 .group+.group{margin-top:3.2rem}
 .group h3{font-size:1.5rem;color:var(--maroon);margin-bottom:.3rem}
 .group>p{margin:0 0 1.4rem;color:var(--muted);font-size:.98rem}
@@ -215,57 +218,29 @@ dialog .nav.prev{left:1rem}dialog .nav.next{right:1rem}
     </figure>
   </div>
 </section>
- 
-<div class="mq"><div class="marquee" aria-hidden="true"><div><span>AI Content Creation</span><span>Video Editing</span><span>Graphic Design</span><span>UGC &amp; Product Ads</span><span>Reels &amp; Shorts</span><span>Brand Visuals</span><span>Motion Graphics</span><span>AI Content Creation</span><span>Video Editing</span><span>Graphic Design</span><span>UGC &amp; Product Ads</span><span>Reels &amp; Shorts</span><span>Brand Visuals</span><span>Motion Graphics</span><span>AI Content Creation</span><span>Video Editing</span><span>Graphic Design</span><span>UGC &amp; Product Ads</span><span>Reels &amp; Shorts</span><span>Brand Visuals</span><span>Motion Graphics</span><span>AI Content Creation</span><span>Video Editing</span><span>Graphic Design</span><span>UGC &amp; Product Ads</span><span>Reels &amp; Shorts</span><span>Brand Visuals</span><span>Motion Graphics</span></div></div></div>
- 
-<section id="about">
-  <div class="wrap rv">
-    <div class="aboutgrid">
-      <figure class="me"><img src="images/profile.jpg" alt="Portrait of Lovely Gonzales" width="480" height="480"><figcaption>Little about me<b>Hello! I&rsquo;m Lovely</b></figcaption></figure>
-      <div>
-        <h2>About me</h2>
-        <p>I&rsquo;m a creative digital marketer who turns ideas into eye-catching content and meaningful brand experiences.</p>
-        <p>I bring concepts to life through AI-powered visuals, engaging video edits, and scroll-stopping graphic designs. From product ads and UGC-style videos to social media creatives, I combine technology and creativity to make every piece of content purposeful, polished, and on-brand.</p>
-        <p>Beyond creating visuals, I aim to help brands capture attention, connect with audiences, and turn ideas into impact.</p>
-      </div>
-    </div>
-    <div class="stats" id="stats"><div><b data-n="video">0</b><span>video samples</span></div><div><b data-n="design">0</b><span>design pieces</span></div><div><b data-n="3">0</b><span>core services</span></div><div><b data-n="tools">0</b><span>tools I use</span></div></div>
-  </div>
-</section>
- 
-<section id="offer">
-  <div class="wrap rv">
-    <h2>What I offer</h2>
-    <div class="offer">
-      <article><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg><span class="num">01</span><h3>AI Content Creation</h3><p>Create eye-catching AI-generated visuals and videos that bring creative concepts to life for brands, products, and digital campaigns.</p><h4>Services</h4><ul><li>AI-generated product visuals</li><li>AI video ads &amp; UGC concepts</li></ul></article>
-      <article><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9z"/></svg><span class="num">02</span><h3>Video Editing</h3><p>Transform raw footage into engaging, polished videos designed to capture attention, tell stories, and connect with your target audience.</p><h4>Services</h4><ul><li>TikTok, Reels &amp; YouTube Shorts</li><li>UGC &amp; product video ads</li><li>Long-form videos &amp; motion graphics</li></ul></article>
-      <article><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg><span class="num">03</span><h3>Graphic Design</h3><p>Design compelling, visually consistent graphics that communicate your message, strengthen brand identity, and make your content stand out.</p><h4>Services</h4><ul><li>Social media graphics &amp; ad creatives</li><li>Promotional &amp; marketing materials</li><li>Church, school &amp; event designs</li></ul></article>
-    </div>
-  </div>
-</section>
- 
 <section id="works">
   <div class="wrap rv">
     <h2>My works</h2>
     <div class="tabs" role="tablist">
-      <button role="tab" id="t-ai" aria-selected="true" aria-controls="p-ai">AI samples</button>
+      <button role="tab" id="t-ads" aria-selected="true" aria-controls="p-ads">Ads &amp; UGC</button>
       <button role="tab" id="t-video" aria-selected="false" aria-controls="p-video">Video editing</button>
       <button role="tab" id="t-design" aria-selected="false" aria-controls="p-design">Graphic design</button>
     </div>
-    <div class="panel" id="p-ai" role="tabpanel" aria-labelledby="t-ai">
+    <div class="panel" id="p-ads" role="tabpanel" aria-labelledby="t-ads">
       <div class="group">
-        <h3>UGC-style ads</h3>
-        <p>AI-generated visuals and UGC-style video ads, backed by editing and design.</p>
-        <div class="grid">
+        <h3>UGC &amp; Product Ads</h3>
+        <p>Product, app, and presenter-style ads for social platforms.</p>
+        <div class="grid" id="ugc-grid">
           <figure class="vcard"><div class="vwrap"><span class="dur">0:31</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-1.jpg" src="videos/project-1.mp4" aria-label="Beauty product ad"></video></div><figcaption>Beauty product ad<small>AI UGC-style ad</small></figcaption></figure>
           <figure class="vcard"><div class="vwrap"><span class="dur">0:30</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-2.jpg" src="videos/project-2.mp4" aria-label="Skincare reel"></video></div><figcaption>Skincare reel<small>AI UGC-style ad</small></figcaption></figure>
           <figure class="vcard"><div class="vwrap"><span class="dur">0:28</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/1022.jpg" src="videos/1022.mp4" aria-label="Lipstick promo"></video></div><figcaption>Lipstick promo<small>AI UGC-style ad</small></figcaption></figure>
           <figure class="vcard"><div class="vwrap"><span class="dur">1:02</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/nynp.jpg" src="videos/nynp.mp4" aria-label="NYNP"></video></div><figcaption>NYNP<small>AI presenter video ad</small></figcaption></figure>
-          <figure class="vcard"><div class="vwrap"><span class="dur">0:38</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-4.jpg" src="videos/project-4.mp4" aria-label="Portable Mini Fan product ad"></video></div><figcaption>Portable Mini Fan<small>UGC-style product ad</small></figcaption></figure>
-          <figure class="vcard"><div class="vwrap"><span class="dur">0:26</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-5.jpg" src="videos/project-5.mp4" aria-label="SKIN1004 Soothing Cream product ad"></video></div><figcaption>SKIN1004 Soothing Cream<small>UGC-style product ad</small></figcaption></figure>
-          <figure class="vcard"><div class="vwrap"><span class="dur">0:23</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-6.jpg" src="videos/project-6.mp4" aria-label="Lumière Eau de Parfum product ad"></video></div><figcaption>Lumi&egrave;re Eau de Parfum<small>UGC-style product ad</small></figcaption></figure>
-          <figure class="vcard"><div class="vwrap"><span class="dur">0:36</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/hanapp-ads-cover.jpg" src="videos/hanapp-ads.mp4" aria-label="HANapp music app ad"></video></div><figcaption>HANapp Music App Ad<small>UGC-style app promo</small></figcaption></figure>
+          <figure class="vcard ugc-extra" hidden><div class="vwrap"><span class="dur">0:38</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-4.jpg" src="videos/project-4.mp4" aria-label="Portable Mini Fan product ad"></video></div><figcaption>Portable Mini Fan<small>UGC-style product ad</small></figcaption></figure>
+          <figure class="vcard ugc-extra" hidden><div class="vwrap"><span class="dur">0:26</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-5.jpg" src="videos/project-5.mp4" aria-label="SKIN1004 Soothing Cream product ad"></video></div><figcaption>SKIN1004 Soothing Cream<small>UGC-style product ad</small></figcaption></figure>
+          <figure class="vcard ugc-extra" hidden><div class="vwrap"><span class="dur">0:23</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-6.jpg" src="videos/project-6.mp4" aria-label="Lumière Eau de Parfum product ad"></video></div><figcaption>Lumi&egrave;re Eau de Parfum<small>UGC-style product ad</small></figcaption></figure>
+          <figure class="vcard ugc-extra" hidden><div class="vwrap"><span class="dur">0:36</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/hanapp-ads-cover.jpg" src="videos/hanapp-ads.mp4" aria-label="HANapp music app ad"></video></div><figcaption>HANapp Music App Ad<small>UGC-style app promo</small></figcaption></figure>
         </div>
+        <button class="more-btn" id="ugc-more" type="button" aria-expanded="false" aria-controls="ugc-grid">See more</button>
       </div>
     </div>
     <div class="panel" id="p-video" role="tabpanel" aria-labelledby="t-video" hidden>
@@ -303,6 +278,35 @@ dialog .nav.prev{left:1rem}dialog .nav.next{right:1rem}
     </div>
   </div>
 </section>
+
+<div class="mq"><div class="marquee" aria-hidden="true"><div><span>AI Content Creation</span><span>Video Editing</span><span>Graphic Design</span><span>UGC &amp; Product Ads</span><span>Reels &amp; Shorts</span><span>Brand Visuals</span><span>Motion Graphics</span><span>AI Content Creation</span><span>Video Editing</span><span>Graphic Design</span><span>UGC &amp; Product Ads</span><span>Reels &amp; Shorts</span><span>Brand Visuals</span><span>Motion Graphics</span><span>AI Content Creation</span><span>Video Editing</span><span>Graphic Design</span><span>UGC &amp; Product Ads</span><span>Reels &amp; Shorts</span><span>Brand Visuals</span><span>Motion Graphics</span><span>AI Content Creation</span><span>Video Editing</span><span>Graphic Design</span><span>UGC &amp; Product Ads</span><span>Reels &amp; Shorts</span><span>Brand Visuals</span><span>Motion Graphics</span></div></div></div>
+
+<section id="about">
+  <div class="wrap rv">
+    <div class="aboutgrid">
+      <figure class="me"><img src="images/profile.jpg" alt="Portrait of Lovely Gonzales" width="480" height="480"><figcaption>Little about me<b>Hello! I&rsquo;m Lovely</b></figcaption></figure>
+      <div>
+        <h2>About me</h2>
+        <p>I&rsquo;m a creative digital marketer who turns ideas into eye-catching content and meaningful brand experiences.</p>
+        <p>I bring concepts to life through AI-powered visuals, engaging video edits, and scroll-stopping graphic designs. From product ads and UGC-style videos to social media creatives, I combine technology and creativity to make every piece of content purposeful, polished, and on-brand.</p>
+        <p>Beyond creating visuals, I aim to help brands capture attention, connect with audiences, and turn ideas into impact.</p>
+      </div>
+    </div>
+    <div class="stats" id="stats"><div><b data-n="video">0</b><span>video samples</span></div><div><b data-n="design">0</b><span>design pieces</span></div><div><b data-n="3">0</b><span>core services</span></div><div><b data-n="tools">0</b><span>tools I use</span></div></div>
+  </div>
+</section>
+
+<section id="offer">
+  <div class="wrap rv">
+    <h2>What I offer</h2>
+    <div class="offer">
+      <article><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 3l1.8 5.2L19 10l-5.2 1.8L12 17l-1.8-5.2L5 10l5.2-1.8zM19 16l.8 2.2L22 19l-2.2.8L19 22l-.8-2.2L16 19l2.2-.8z"/></svg><span class="num">01</span><h3>AI Content Creation</h3><p>Create eye-catching AI-generated visuals and videos that bring creative concepts to life for brands, products, and digital campaigns.</p><h4>Services</h4><ul><li>AI-generated product visuals</li><li>AI video ads &amp; UGC concepts</li></ul></article>
+      <article><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5 3l14 9-14 9z"/></svg><span class="num">02</span><h3>Video Editing</h3><p>Transform raw footage into engaging, polished videos designed to capture attention, tell stories, and connect with your target audience.</p><h4>Services</h4><ul><li>TikTok, Reels &amp; YouTube Shorts</li><li>UGC &amp; product video ads</li><li>Long-form videos &amp; motion graphics</li></ul></article>
+      <article><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 20h9M16.5 3.5a2.1 2.1 0 013 3L7 19l-4 1 1-4z"/></svg><span class="num">03</span><h3>Graphic Design</h3><p>Design compelling, visually consistent graphics that communicate your message, strengthen brand identity, and make your content stand out.</p><h4>Services</h4><ul><li>Social media graphics &amp; ad creatives</li><li>Promotional &amp; marketing materials</li><li>Church, school &amp; event designs</li></ul></article>
+    </div>
+  </div>
+</section>
+
 <dialog id="lb" aria-label="Enlarged design"><button type="button" id="lbx">Close</button><button type="button" class="nav prev" id="lbp" aria-label="Previous">&lsaquo;</button><button type="button" class="nav next" id="lbn" aria-label="Next">&rsaquo;</button><img alt=""></dialog>
  
 <section id="tools">
@@ -355,6 +359,16 @@ tabs.forEach(t=>t.addEventListener('click',()=>{
   tabs.forEach(o=>{const on=o===t;o.setAttribute('aria-selected',on);document.getElementById(o.getAttribute('aria-controls')).hidden=!on});
   document.querySelectorAll('video').forEach(v=>v.pause());
 }));
+const moreUgc=document.getElementById('ugc-more'),extraUgc=[...document.querySelectorAll('#ugc-grid .ugc-extra')];
+moreUgc.addEventListener('click',()=>{
+  const expanded=moreUgc.getAttribute('aria-expanded')==='true';
+  extraUgc.forEach(card=>{
+    card.hidden=expanded;
+    if(expanded){card.querySelector('video').pause();card.querySelector('.vwrap').classList.remove('go')}
+  });
+  moreUgc.setAttribute('aria-expanded',String(!expanded));
+  moreUgc.textContent=expanded?'See more':'Show less';
+});
 // Lightbox
 const lb=document.getElementById('lb'),lbi=lb.querySelector('img');
 document.querySelectorAll('.dcard button').forEach(b=>b.addEventListener('click',()=>{lbi.src=b.dataset.full;lbi.alt=b.dataset.alt;lb.showModal()}));
