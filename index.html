@@ -84,9 +84,20 @@ h2::after{content:"";display:block;width:3.2rem;height:3px;background:var(--maro
 .offer p{margin:0;color:var(--muted);font-size:1rem}
  
 /* works */
-.tabs{display:flex;gap:.6rem;margin:-.6rem 0 2.4rem;flex-wrap:wrap}
-.tabs button{font:600 1rem var(--sans);padding:.7rem 1.5rem;border-radius:99px;border:2px solid var(--maroon);background:transparent;color:var(--maroon);cursor:pointer;transition:.2s}
-.tabs button[aria-selected="true"],.tabs button:hover{background:var(--maroon);color:var(--on)}
+#works{background:#2b0d12;padding-top:3rem;padding-bottom:3rem}
+#works{color:#f9eef0}
+#works .wrap{max-width:70rem}
+#works h2{display:none}
+.tabs{display:flex;gap:1.4rem;justify-content:center;align-items:center;margin:0 auto 2.2rem;flex-wrap:wrap;padding:0 1rem;max-width:68rem}
+.tabs button{font:600 clamp(1.1rem,2vw,2.1rem) var(--sans);padding:.75rem 1.5rem;flex:1 1 11rem;border-radius:999px;border:3px solid #f4c0cc;background:rgba(244,190,201,.28);color:#f9eef0;cursor:pointer;transition:transform .2s,background .2s,box-shadow .2s;box-shadow:inset 0 0 0 2px rgba(255,255,255,.04);line-height:1.2}
+.tabs button:hover,.tabs button[aria-selected="true"]{background:#f5c3d0;color:#2b0d12;transform:translateY(-1px);box-shadow:inset 0 0 0 2px rgba(43,13,18,.08),0 8px 24px rgba(243,170,186,.18)}
+#works .group h3{color:#f5c3d0}
+#works .group>p{color:#e3c4c8}
+#works .vcard figcaption{color:#f9eef0}
+#works .vcard figcaption small{color:#e3c4c8}
+#works .more-btn{border-color:#f4c0cc;color:#f9eef0}
+#works .more-btn:hover{background:#f5c3d0;color:#2b0d12}
+#design-work{background:var(--paper);border-block:1px solid var(--line)}
 .more-btn{display:block;margin:1.6rem auto 0;padding:.7rem 1.5rem;border:2px solid var(--maroon);border-radius:99px;background:transparent;color:var(--maroon);font:600 1rem var(--sans);cursor:pointer;transition:background .2s,color .2s}
 .more-btn:hover{background:var(--maroon);color:var(--on)}
 .panel[hidden]{display:none}
@@ -222,58 +233,77 @@ dialog .nav.prev{left:1rem}dialog .nav.next{right:1rem}
   <div class="wrap rv">
     <h2>My works</h2>
     <div class="tabs" role="tablist">
-      <button role="tab" id="t-ads" aria-selected="true" aria-controls="p-ads">Ads &amp; UGC</button>
-      <button role="tab" id="t-video" aria-selected="false" aria-controls="p-video">Video editing</button>
-      <button role="tab" id="t-design" aria-selected="false" aria-controls="p-design">Graphic design</button>
+      <button role="tab" id="t-ugc" aria-selected="true" aria-controls="p-ugc">UGC</button>
+      <button role="tab" id="t-ads" aria-selected="false" aria-controls="p-ads">Ads</button>
+      <button role="tab" id="t-shortform" aria-selected="false" aria-controls="p-shortform">Short form</button>
+      <button role="tab" id="t-pixar" aria-selected="false" aria-controls="p-pixar">Pixar style</button>
     </div>
-    <div class="panel" id="p-ads" role="tabpanel" aria-labelledby="t-ads">
+    <div class="panel" id="p-ugc" role="tabpanel" aria-labelledby="t-ugc">
       <div class="group">
-        <h3>UGC &amp; Product Ads</h3>
-        <p>Product, app, and presenter-style ads for social platforms.</p>
+        <h3>Talking-head UGC</h3>
+        <p>Presenter-led videos with product reviews and recommendations.</p>
         <div class="grid" id="ugc-grid">
-          <figure class="vcard"><div class="vwrap"><span class="dur">0:31</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-1.jpg" src="videos/project-1.mp4" aria-label="Beauty product ad"></video></div><figcaption>Beauty product ad<small>AI UGC-style ad</small></figcaption></figure>
-          <figure class="vcard"><div class="vwrap"><span class="dur">0:30</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-2.jpg" src="videos/project-2.mp4" aria-label="Skincare reel"></video></div><figcaption>Skincare reel<small>AI UGC-style ad</small></figcaption></figure>
-          <figure class="vcard"><div class="vwrap"><span class="dur">0:28</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/1022.jpg" src="videos/1022.mp4" aria-label="Lipstick promo"></video></div><figcaption>Lipstick promo<small>AI UGC-style ad</small></figcaption></figure>
-          <figure class="vcard"><div class="vwrap"><span class="dur">1:02</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/nynp.jpg" src="videos/nynp.mp4" aria-label="NYNP"></video></div><figcaption>NYNP<small>AI presenter video ad</small></figcaption></figure>
-          <figure class="vcard ugc-extra" hidden><div class="vwrap"><span class="dur">0:38</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-4.jpg" src="videos/project-4.mp4" aria-label="Portable Mini Fan product ad"></video></div><figcaption>Portable Mini Fan<small>UGC-style product ad</small></figcaption></figure>
-          <figure class="vcard ugc-extra" hidden><div class="vwrap"><span class="dur">0:26</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-5.jpg" src="videos/project-5.mp4" aria-label="SKIN1004 Soothing Cream product ad"></video></div><figcaption>SKIN1004 Soothing Cream<small>UGC-style product ad</small></figcaption></figure>
-          <figure class="vcard ugc-extra" hidden><div class="vwrap"><span class="dur">0:23</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-6.jpg" src="videos/project-6.mp4" aria-label="Lumière Eau de Parfum product ad"></video></div><figcaption>Lumi&egrave;re Eau de Parfum<small>UGC-style product ad</small></figcaption></figure>
-          <figure class="vcard ugc-extra" hidden><div class="vwrap"><span class="dur">0:36</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/hanapp-ads-cover.jpg" src="videos/hanapp-ads.mp4" aria-label="HANapp music app ad"></video></div><figcaption>HANapp Music App Ad<small>UGC-style app promo</small></figcaption></figure>
+          <figure class="vcard"><div class="vwrap"><span class="dur">0:31</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-1.jpg" src="videos/project-1.mp4" aria-label="Beauty product talking-head UGC"></video></div><figcaption>Beauty product UGC<small>Talking-head product review</small></figcaption></figure>
+          <figure class="vcard"><div class="vwrap"><span class="dur">0:30</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-2.jpg" src="videos/project-2.mp4" aria-label="Skincare talking-head UGC"></video></div><figcaption>Skincare UGC<small>Presenter-led product feature</small></figcaption></figure>
+          <figure class="vcard"><div class="vwrap"><span class="dur">0:28</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/1022.jpg" src="videos/1022.mp4" aria-label="Lipstick talking-head UGC"></video></div><figcaption>Lipstick UGC<small>Talking-head product feature</small></figcaption></figure>
+          <figure class="vcard"><div class="vwrap"><span class="dur">0:26</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-5.jpg" src="videos/project-5.mp4" aria-label="SKIN1004 Soothing Cream talking-head UGC"></video></div><figcaption>SKIN1004 Soothing Cream<small>Talking-head product review</small></figcaption></figure>
         </div>
-        <button class="more-btn" id="ugc-more" type="button" aria-expanded="false" aria-controls="ugc-grid">See more</button>
       </div>
     </div>
-    <div class="panel" id="p-video" role="tabpanel" aria-labelledby="t-video" hidden>
+    <div class="panel" id="p-ads" role="tabpanel" aria-labelledby="t-ads" hidden>
       <div class="group">
-        <h3>Short-form reels</h3>
+        <h3>Product ads</h3>
+        <p>Product-focused ads and promos with no presenter shots.</p>
+        <div class="grid" id="ads-grid">
+          <figure class="vcard"><div class="vwrap"><span class="dur">0:38</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-4.jpg" src="videos/project-4.mp4" aria-label="Portable Mini Fan product ad"></video></div><figcaption>Portable Mini Fan<small>Product-only ad</small></figcaption></figure>
+          <figure class="vcard"><div class="vwrap"><span class="dur">0:23</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-6.jpg" src="videos/project-6.mp4" aria-label="Lumière Eau de Parfum product ad"></video></div><figcaption>Lumi&egrave;re Eau de Parfum<small>Product-focused perfume ad</small></figcaption></figure>
+          <figure class="vcard"><div class="vwrap"><span class="dur">0:36</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/hanapp-ads-cover.jpg" src="videos/hanapp-ads.mp4" aria-label="HANapp music app ad"></video></div><figcaption>HANapp Music App<small>App promo</small></figcaption></figure>
+          <figure class="vcard"><div class="vwrap"><span class="dur">0:34</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/ai-ecommerce-commercial-1.jpg" src="videos/ai-ecommerce-commercial-1.mp4" aria-label="AI e-commerce product advertisement"></video></div><figcaption>AI E-Commerce Ad<small>Product-focused commercial</small></figcaption></figure>
+          <figure class="vcard more-card" hidden><div class="vwrap"><span class="dur">0:37</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/ai-ecommerce-commercial-2.jpg" src="videos/ai-ecommerce-commercial-2.mp4" aria-label="Second AI e-commerce product advertisement"></video></div><figcaption>AI E-Commerce Ad 02<small>Product-focused commercial</small></figcaption></figure>
+          <figure class="vcard more-card" hidden><div class="vwrap"><span class="dur">0:08</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/new-flavor.jpg" src="videos/new-flavor.mp4" aria-label="New Flavor product promo"></video></div><figcaption>New Flavor<small>Product promo animation</small></figcaption></figure>
+        </div>
+        <button class="more-btn" type="button" aria-expanded="false" aria-controls="ads-grid">See more</button>
+      </div>
+    </div>
+    <div class="panel" id="p-shortform" role="tabpanel" aria-labelledby="t-shortform" hidden>
+      <div class="group">
+        <h3>Short-form videos</h3>
         <p>Vertical edits for TikTok, Reels and YouTube Shorts.</p>
         <div class="grid">
-          <figure class="vcard"><div class="vwrap"><span class="dur">0:51</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/no-shortcuts.jpg" src="videos/no-shortcuts.mp4" aria-label="No Shortcuts in This Game"></video></div><figcaption>No Shortcuts in This Game<small>Short-form edit with captions and motion graphics</small></figcaption></figure>
-        </div>
-      </div>
-      <div class="group">
-        <h3>Promos and motion graphics</h3>
-        <p>Landscape promo and motion work.</p>
-        <div class="grid wide">
-          <figure class="vcard"><div class="vwrap"><span class="dur">0:08</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/new-flavor.jpg" src="videos/new-flavor.mp4" aria-label="New Flavor"></video></div><figcaption>New Flavor<small>Product promo animation</small></figcaption></figure>
+          <figure class="vcard"><div class="vwrap"><span class="dur">0:51</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/no-shortcuts.jpg" src="videos/no-shortcuts.mp4" aria-label="No Shortcuts in This Game short-form video"></video></div><figcaption>No Shortcuts in This Game<small>Short-form edit with captions and motion graphics</small></figcaption></figure>
+          <figure class="vcard"><div class="vwrap"><span class="dur">1:02</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/nynp.jpg" src="videos/nynp.mp4" aria-label="NYNP short-form video"></video></div><figcaption>NYNP<small>Presenter-led short-form edit</small></figcaption></figure>
         </div>
       </div>
     </div>
-    <div class="panel" id="p-design" role="tabpanel" aria-labelledby="t-design" hidden>
+    <div class="panel" id="p-pixar" role="tabpanel" aria-labelledby="t-pixar" hidden>
       <div class="group">
-        <h3>Branding and merch mockups</h3>
-        <p>Church and event designs: Covenant Keeping tote bag and polo shirt. Tap an image to enlarge.</p>
-        <div class="dgrid">
-          <figure class="dcard"><button type="button" data-full="images/covenant-tote.jpg" data-alt="Covenant Keeping tote bag mockup showing the logo on the front and a Deuteronomy 7:9 verse on the back"><img src="images/covenant-tote.jpg" alt="Covenant Keeping tote bag mockup showing the logo on the front and a Deuteronomy 7:9 verse on the back" loading="lazy"></button><figcaption>Tote bag<small>Covenant Keeping, front and back</small></figcaption></figure>
-          <figure class="dcard"><button type="button" data-full="images/covenant-polo.jpg" data-alt="Covenant Keeping polo shirt mockup in navy, gold and white"><img src="images/covenant-polo.jpg" alt="Covenant Keeping polo shirt mockup in navy, gold and white" loading="lazy"></button><figcaption>Polo shirt<small>Covenant Keeping, front and back</small></figcaption></figure>
+        <h3>Pixar-style stories</h3>
+        <p>Character-led animated storytelling.</p>
+        <div class="grid">
+          <figure class="vcard"><div class="vwrap"><span class="dur">1:02</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/ai-cartoon-storytelling-1.jpg" src="videos/ai-cartoon-storytelling-1.mp4" aria-label="Pixar-style AI cartoon story"></video></div><figcaption>AI Cartoon Story<small>Pixar-style character-led storytelling</small></figcaption></figure>
+          <figure class="vcard"><div class="vwrap"><span class="dur">0:45</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/ai-cartoon-storytelling-2.jpg" src="videos/ai-cartoon-storytelling-2.mp4" aria-label="Second Pixar-style AI cartoon story"></video></div><figcaption>AI Cartoon Story 02<small>Pixar-style character-led storytelling</small></figcaption></figure>
         </div>
       </div>
-      <div class="group">
-        <h3>Poster design</h3>
-        <p>Product advertising layout.</p>
-        <div class="dgrid">
-          <figure class="dcard"><button type="button" data-full="images/kicks-poster.jpg" data-alt="Kicks Soft poster featuring a green loafer on a green and cream background"><img src="images/kicks-poster.jpg" alt="Kicks Soft poster featuring a green loafer on a green and cream background" loading="lazy"></button><figcaption>Kicks Soft<small>Footwear poster</small></figcaption></figure>
-        </div>
+    </div>
+  </div>
+</section>
+
+<section id="design-work">
+  <div class="wrap rv">
+    <h2>Graphic design</h2>
+    <div class="group">
+      <h3>Branding and merch mockups</h3>
+      <p>Church and event designs: Covenant Keeping tote bag and polo shirt. Tap an image to enlarge.</p>
+      <div class="dgrid">
+        <figure class="dcard"><button type="button" data-full="images/covenant-tote.jpg" data-alt="Covenant Keeping tote bag mockup showing the logo on the front and a Deuteronomy 7:9 verse on the back"><img src="images/covenant-tote.jpg" alt="Covenant Keeping tote bag mockup showing the logo on the front and a Deuteronomy 7:9 verse on the back" loading="lazy"></button><figcaption>Tote bag<small>Covenant Keeping, front and back</small></figcaption></figure>
+        <figure class="dcard"><button type="button" data-full="images/covenant-polo.jpg" data-alt="Covenant Keeping polo shirt mockup in navy, gold and white"><img src="images/covenant-polo.jpg" alt="Covenant Keeping polo shirt mockup in navy, gold and white" loading="lazy"></button><figcaption>Polo shirt<small>Covenant Keeping, front and back</small></figcaption></figure>
+      </div>
+    </div>
+    <div class="group">
+      <h3>Poster design</h3>
+      <p>Product advertising layout.</p>
+      <div class="dgrid">
+        <figure class="dcard"><button type="button" data-full="images/kicks-poster.jpg" data-alt="Kicks Soft poster featuring a green loafer on a green and cream background"><img src="images/kicks-poster.jpg" alt="Kicks Soft poster featuring a green loafer on a green and cream background" loading="lazy"></button><figcaption>Kicks Soft<small>Footwear poster</small></figcaption></figure>
       </div>
     </div>
   </div>
@@ -359,15 +389,17 @@ tabs.forEach(t=>t.addEventListener('click',()=>{
   tabs.forEach(o=>{const on=o===t;o.setAttribute('aria-selected',on);document.getElementById(o.getAttribute('aria-controls')).hidden=!on});
   document.querySelectorAll('video').forEach(v=>v.pause());
 }));
-const moreUgc=document.getElementById('ugc-more'),extraUgc=[...document.querySelectorAll('#ugc-grid .ugc-extra')];
-moreUgc.addEventListener('click',()=>{
-  const expanded=moreUgc.getAttribute('aria-expanded')==='true';
-  extraUgc.forEach(card=>{
-    card.hidden=expanded;
-    if(expanded){card.querySelector('video').pause();card.querySelector('.vwrap').classList.remove('go')}
+document.querySelectorAll('.more-btn').forEach(button=>{
+  const cards=[...document.getElementById(button.getAttribute('aria-controls')).querySelectorAll('.more-card')];
+  button.addEventListener('click',()=>{
+    const expanded=button.getAttribute('aria-expanded')==='true';
+    cards.forEach(card=>{
+      card.hidden=expanded;
+      if(expanded){card.querySelector('video').pause();card.querySelector('.vwrap').classList.remove('go')}
+    });
+    button.setAttribute('aria-expanded',String(!expanded));
+    button.textContent=expanded?'See more':'Show less';
   });
-  moreUgc.setAttribute('aria-expanded',String(!expanded));
-  moreUgc.textContent=expanded?'See more':'Show less';
 });
 // Lightbox
 const lb=document.getElementById('lb'),lbi=lb.querySelector('img');
