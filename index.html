@@ -257,13 +257,13 @@ dialog .nav.prev{left:1rem}dialog .nav.next{right:1rem}
     <div class="panel" id="p-all" role="tabpanel" aria-labelledby="t-all">
       <div class="group">
         <h3>Featured projects</h3>
-        <p>A selection of four UGC video projects from my portfolio.</p>
+        <p>A selection of three UGC video projects from my portfolio.</p>
         <div class="grid">
           <figure class="vcard"><div class="vwrap"><span class="dur">0:31</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-1.jpg" src="videos/project-1.mp4" aria-label="Beauty product talking-head UGC"></video></div><figcaption>Beauty product UGC<small>Talking-head product review</small></figcaption></figure>
           <figure class="vcard"><div class="vwrap"><span class="dur">0:30</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-2.jpg" src="videos/project-2.mp4" aria-label="Skincare talking-head UGC"></video></div><figcaption>Skincare UGC<small>Presenter-led product feature</small></figcaption></figure>
           <figure class="vcard"><div class="vwrap"><span class="dur">0:28</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/1022.jpg" src="videos/1022.mp4" aria-label="Lipstick talking-head UGC"></video></div><figcaption>Lipstick UGC<small>Talking-head product feature</small></figcaption></figure>
-          <figure class="vcard"><div class="vwrap"><span class="dur">0:26</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-5.jpg" src="videos/project-5.mp4" aria-label="SKIN1004 Soothing Cream talking-head UGC"></video></div><figcaption>SKIN1004 Soothing Cream<small>Talking-head product review</small></figcaption></figure>
         </div>
+        <button class="more-btn" id="see-all-ugc" type="button">See all</button>
       </div>
     </div>
     <div class="panel" id="p-ugc" role="tabpanel" aria-labelledby="t-ugc" hidden>
@@ -416,7 +416,8 @@ tabs.forEach(t=>t.addEventListener('click',()=>{
   tabs.forEach(o=>{const on=o===t;o.setAttribute('aria-selected',on);document.getElementById(o.getAttribute('aria-controls')).hidden=!on});
   document.querySelectorAll('video').forEach(v=>v.pause());
 }));
-document.querySelectorAll('.more-btn').forEach(button=>{
+document.getElementById('see-all-ugc').addEventListener('click',()=>document.getElementById('t-ugc').click());
+document.querySelectorAll('.more-btn[aria-controls]').forEach(button=>{
   const cards=[...document.getElementById(button.getAttribute('aria-controls')).querySelectorAll('.more-card')];
   button.addEventListener('click',()=>{
     const expanded=button.getAttribute('aria-expanded')==='true';
