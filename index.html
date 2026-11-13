@@ -233,13 +233,27 @@ dialog .nav.prev{left:1rem}dialog .nav.next{right:1rem}
   <div class="wrap rv">
     <h2>My works</h2>
     <div class="tabs" role="tablist">
-      <button role="tab" id="t-ugc" aria-selected="true" aria-controls="p-ugc">UGC</button>
+      <button role="tab" id="t-all" aria-selected="true" aria-controls="p-all">All</button>
+      <button role="tab" id="t-ugc" aria-selected="false" aria-controls="p-ugc">UGC</button>
       <button role="tab" id="t-ads" aria-selected="false" aria-controls="p-ads">Ads</button>
       <button role="tab" id="t-shortform" aria-selected="false" aria-controls="p-shortform">Short form</button>
       <button role="tab" id="t-pixar" aria-selected="false" aria-controls="p-pixar">Pixar style</button>
       <button role="tab" id="t-real-estate" aria-selected="false" aria-controls="p-real-estate">Real Estate</button>
+      <button role="tab" id="t-graphic-design" aria-selected="false" aria-controls="p-graphic-design">Graphic Design</button>
     </div>
-    <div class="panel" id="p-ugc" role="tabpanel" aria-labelledby="t-ugc">
+    <div class="panel" id="p-all" role="tabpanel" aria-labelledby="t-all">
+      <div class="group">
+        <h3>Featured projects</h3>
+        <p>A selection of four projects from my portfolio.</p>
+        <div class="grid">
+          <figure class="vcard"><div class="vwrap"><span class="dur">0:31</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-1.jpg" src="videos/project-1.mp4" aria-label="Beauty product talking-head UGC"></video></div><figcaption>Beauty product UGC<small>Talking-head product review</small></figcaption></figure>
+          <figure class="vcard"><div class="vwrap"><span class="dur">0:38</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/project-4.jpg" src="videos/project-4.mp4" aria-label="Portable Mini Fan product ad"></video></div><figcaption>Portable Mini Fan<small>Product-only ad</small></figcaption></figure>
+          <figure class="vcard"><div class="vwrap"><span class="dur">0:51</span><button class="bigplay" type="button" aria-label="Play video"></button><video controls preload="none" playsinline poster="posters/no-shortcuts.jpg" src="videos/no-shortcuts.mp4" aria-label="No Shortcuts in This Game short-form video"></video></div><figcaption>No Shortcuts in This Game<small>Short-form edit with captions and motion graphics</small></figcaption></figure>
+          <figure class="dcard"><button type="button" data-full="images/kicks-poster.jpg" data-alt="Kicks Soft poster featuring a green loafer on a green and cream background"><img src="images/kicks-poster.jpg" alt="Kicks Soft poster featuring a green loafer on a green and cream background" loading="lazy"></button><figcaption>Kicks Soft<small>Footwear poster</small></figcaption></figure>
+        </div>
+      </div>
+    </div>
+    <div class="panel" id="p-ugc" role="tabpanel" aria-labelledby="t-ugc" hidden>
       <div class="group">
         <h3>Talking-head UGC</h3>
         <p>Presenter-led videos with product reviews and recommendations.</p>
@@ -295,25 +309,15 @@ dialog .nav.prev{left:1rem}dialog .nav.next{right:1rem}
         </div>
       </div>
     </div>
-  </div>
-</section>
-
-<section id="design-work">
-  <div class="wrap rv">
-    <h2>Graphic design</h2>
-    <div class="group">
-      <h3>Branding and merch mockups</h3>
-      <p>Church and event designs: Covenant Keeping tote bag and polo shirt. Tap an image to enlarge.</p>
-      <div class="dgrid">
-        <figure class="dcard"><button type="button" data-full="images/covenant-tote.jpg" data-alt="Covenant Keeping tote bag mockup showing the logo on the front and a Deuteronomy 7:9 verse on the back"><img src="images/covenant-tote.jpg" alt="Covenant Keeping tote bag mockup showing the logo on the front and a Deuteronomy 7:9 verse on the back" loading="lazy"></button><figcaption>Tote bag<small>Covenant Keeping, front and back</small></figcaption></figure>
-        <figure class="dcard"><button type="button" data-full="images/covenant-polo.jpg" data-alt="Covenant Keeping polo shirt mockup in navy, gold and white"><img src="images/covenant-polo.jpg" alt="Covenant Keeping polo shirt mockup in navy, gold and white" loading="lazy"></button><figcaption>Polo shirt<small>Covenant Keeping, front and back</small></figcaption></figure>
-      </div>
-    </div>
-    <div class="group">
-      <h3>Poster design</h3>
-      <p>Product advertising layout.</p>
-      <div class="dgrid">
-        <figure class="dcard"><button type="button" data-full="images/kicks-poster.jpg" data-alt="Kicks Soft poster featuring a green loafer on a green and cream background"><img src="images/kicks-poster.jpg" alt="Kicks Soft poster featuring a green loafer on a green and cream background" loading="lazy"></button><figcaption>Kicks Soft<small>Footwear poster</small></figcaption></figure>
+    <div class="panel" id="p-graphic-design" role="tabpanel" aria-labelledby="t-graphic-design" hidden>
+      <div class="group">
+        <h3>Graphic design</h3>
+        <p>Brand visuals, merch mockups and promotional designs.</p>
+        <div class="dgrid">
+          <figure class="dcard"><button type="button" data-full="images/covenant-tote.jpg" data-alt="Covenant Keeping tote bag mockup showing the logo on the front and a Deuteronomy 7:9 verse on the back"><img src="images/covenant-tote.jpg" alt="Covenant Keeping tote bag mockup showing the logo on the front and a Deuteronomy 7:9 verse on the back" loading="lazy"></button><figcaption>Tote bag<small>Covenant Keeping, front and back</small></figcaption></figure>
+          <figure class="dcard"><button type="button" data-full="images/covenant-polo.jpg" data-alt="Covenant Keeping polo shirt mockup in navy, gold and white"><img src="images/covenant-polo.jpg" alt="Covenant Keeping polo shirt mockup in navy, gold and white" loading="lazy"></button><figcaption>Polo shirt<small>Covenant Keeping, front and back</small></figcaption></figure>
+          <figure class="dcard"><button type="button" data-full="images/kicks-poster.jpg" data-alt="Kicks Soft poster featuring a green loafer on a green and cream background"><img src="images/kicks-poster.jpg" alt="Kicks Soft poster featuring a green loafer on a green and cream background" loading="lazy"></button><figcaption>Kicks Soft<small>Footwear poster</small></figcaption></figure>
+        </div>
       </div>
     </div>
   </div>
@@ -449,7 +453,7 @@ document.querySelectorAll('.vwrap').forEach(w=>{const v=w.querySelector('video')
 });
 document.querySelectorAll('video').forEach(v=>v.addEventListener('play',()=>document.querySelectorAll('.vwrap').forEach(w=>{if(w.querySelector('video')!==v)w.classList.remove('go')})));
 // count-up stats (real counts from the page)
-const counts={video:document.querySelectorAll('#works .vcard').length,design:document.querySelectorAll('#works .dcard').length,3:document.querySelectorAll('.offer article').length,tools:document.querySelectorAll('.tools li').length};
+const counts={video:document.querySelectorAll('#works .panel:not(#p-all) .vcard').length,design:document.querySelectorAll('#works .panel:not(#p-all) .dcard').length,3:document.querySelectorAll('.offer article').length,tools:document.querySelectorAll('.tools li').length};
 const sio=new IntersectionObserver(es=>es.forEach(en=>{if(!en.isIntersecting)return;sio.disconnect();en.target.querySelectorAll('b').forEach(b=>{const to=counts[b.dataset.n],t0=performance.now();const f=t=>{const p=Math.min(1,(t-t0)/(rm?1:1100));b.textContent=Math.round(to*(1-Math.pow(1-p,3)));if(p<1)requestAnimationFrame(f)};requestAnimationFrame(f)})}),{threshold:.4});
 sio.observe(document.getElementById('stats'));
 // lightbox gallery with prev/next + keys
